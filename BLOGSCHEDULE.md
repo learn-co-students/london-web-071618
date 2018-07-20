@@ -2,7 +2,7 @@
   * 7/24: Ali Aziz, Louana Chrirta, Casey Von-Rose
   * 7/26: Joanne Wilkins, Sarah Jacob
   * 7/31: Ritz Wu, Ramona Mironescu, Karla Reyes
-  * /2: Maduri Vassaramo, Adham Muhammad
+  * 8/2: Maduri Vassaramo, Adham Muhammad
 
 ## MOD 2
   * 8/7: Ali Aziz, Louana Chrirta, Casey Von-Rose
