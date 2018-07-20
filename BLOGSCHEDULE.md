@@ -1,18 +1,14 @@
 ## MOD 1
-WEEK 2:
-  7/24: Ali Aziz, Louana Chrirta, Casey Von-Rose
-  7/26: Joanne Wilkins, Sarah Jacob
-WEEK 3:
-  7/31: Ritz Wu, Ramona Mironescu, Karla Reyes
-  8/2: Maduri Vassaramo, Adham Muhammad
+  * 7/24: Ali Aziz, Louana Chrirta, Casey Von-Rose
+  * 7/26: Joanne Wilkins, Sarah Jacob
+  * 7/31: Ritz Wu, Ramona Mironescu, Karla Reyes
+  * /2: Maduri Vassaramo, Adham Muhammad
 
 ## MOD 2
-WEEK 1:
-  8/7: Ali Aziz, Louana Chrirta, Casey Von-Rose
-  8/9: Joanne Wilkins, Sarah Jacob
-WEEK 2:
-  8/14: Ritz Wu, Ramona Mironescu, Karla Reyes
-  8/16: Maduri Vassaramo, Adham Muhammad
+  * 8/7: Ali Aziz, Louana Chrirta, Casey Von-Rose
+  * 8/9: Joanne Wilkins, Sarah Jacob
+  * 8/14: Ritz Wu, Ramona Mironescu, Karla Reyes
+  * 8/16: Maduri Vassaramo, Adham Muhammad
 
 ## MOD 3
 WEEK 1:
