@@ -11,40 +11,51 @@ Structure Query Language
 ## What is SQL for
 store information
 retrieve information
+organize information
+specify relationships
+
+- * give me it all, wildcard
+- INTEGER PRIMARY KEY
+  - unique identifier
+  - sql increments the id for me
+
 
 ## Challenges
 
 1. Write the SQL to return all of the rows in the artists table?
 
 ```SQL
-
+SELECT * FROM artists
 ```
 
 2. Write the SQL to select the artist with the name "Black Sabbath"
 
 ```SQL
+SELECT * FROM artists WHERE name = 'Black Sabbath'
 
 ```
 
 3. Write the SQL to create a table named 'fans' with an autoincrementing ID that's a primary key and a name field of type text
 
 ```sql
+CREATE TABLE fans (id INTEGER PRIMARY KEY, name TEXT)
 
 ```
 
-4. Write the SQL to alter the fans table to have a artist_id column type integer?
+4. Write the SQL to alter the fans table to have a artistId column type integer?
 
 ```sql
-
+ALTER TABLE fans ADD COLUMN artistId INTEGER
 ```
 
 5. Write the SQL to add yourself as a fan of the Black Eyed Peas? ArtistId **169**
 
 ```sql
+INSERT INTO fans (name, artistId) VALUES ('niky', 169)
 
 ```
 
-6. Check out the [Faker gem](https://github.com/stympy/faker). `gem install faker`, open up irb, run `require 'faker'` and then generate a fake name for yourself using `Faker::Name.name`. How would you update your name in the fans table to be your new name?
+6. How would you update the name of the first fan in the fans table to be a new name?
 
    ```sql
 
