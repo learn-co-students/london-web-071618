@@ -1,25 +1,27 @@
 # What is a many to many relationship?
 
-## Decide on a domain - Countries and Citizens
-## Recap objects
-### Create models - separate files // importing
-`require_relative`
+## Domain - Countries and Citizens
+## Recap - objects
+## Recap - relationships
+
+### Create models - separate files // importing !
+`require_relative` !
 
 ```ruby
 class Citizen
   attr_reader :name, :birth_year
 
-  ALL = []
+  @@all = []
 
   def initialize(name, birth_year)
     @name = name
     @birth_year = birth_year
 
-    ALL << self
+    @@all << self
   end
 
   def self.all
-    ALL
+    @@all
   end
 ```
 
@@ -27,18 +29,17 @@ class Citizen
 class Country
   attr_reader :name, :continent
 
-  ALL = []
-  # @@all
+  @@all = []
 
   def initialize(name, continent)
     @name = name
     @continent = continent
 
-    ALL << self
+    @@all << self
   end
 
   def self.all
-    ALL
+    @@all
   end
 ```
 ## Recap one - to many
@@ -52,17 +53,17 @@ class Country
 class Passport
   attr_reader :citizen, :country
 
-  ALL = []
+  @@all = []
 
   def initialize(citizen, country)
     @citizen = citizen
     @country = country
 
-    ALL << self
+    @@all << self
   end
 
   def self.all
-    ALL
+    @@all
   end
 end
 ```
@@ -84,6 +85,10 @@ end
 
 ```ruby
 # country.rb
+
+  def naturalize_citizen(citizen)
+    Passport.new(citizen, self)
+  end
 
   def passports
     Passport.all.select do |passport|
