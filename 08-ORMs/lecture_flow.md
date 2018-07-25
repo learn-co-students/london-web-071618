@@ -35,11 +35,7 @@ class Artist
 end
 ```
 
-## get CRUDdy
-
-### Finding first
-
-#### Newest artist
+### Newest artist
 
 ```ruby
   def self.get_highest_id
@@ -51,7 +47,19 @@ end
   end
 ```
 
-#### Exact artist
+### Hash to object conversion
+
+```ruby
+  def self.parse_artist(artist_hash)
+    if artist_hash
+      Artist.new(artist_hash["id"], artist_hash["name"])
+    else
+      nil
+    end
+  end
+```
+
+### Exact artist
 ```ruby
   def self.find(id)
     sql = <<-SQL
@@ -62,6 +70,8 @@ end
     Artist.parse_artist(artist_hash)
   end
 ```
+
+## get CRUDdy
 
 ### Create
 
