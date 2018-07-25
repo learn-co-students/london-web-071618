@@ -7,6 +7,8 @@ require 'pry'
 # execute("INSERT INTO artists (name) VALUES")
 
 DB = { :conn => SQLite3::Database.new('./artists.db') }
+# DB[:conn].results_as_hash = true
+
 
 # if !database_exists
 #   create_database
