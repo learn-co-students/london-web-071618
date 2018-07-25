@@ -49,12 +49,4 @@ def delete_artist(name)
   DB[:conn].execute(sql, name)
 end
 
-def show_all_artists
-  sql = <<-SQL
-    SELECT * FROM artists
-  SQL
-
-  DB[:conn].execute(sql)
-end
-
 Pry.start
