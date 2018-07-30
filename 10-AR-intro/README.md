@@ -1,0 +1,37 @@
+Daniel Kaczmarczyk [10:05 AM]
+- what are the files here?
+- activeRecord class inheritance
+- gemfile
+- bundle install
+- gemfile.lock (what to do if dependencies break?)
+- what are dependencies
+- rake
+- environment.rb
+- Rakefile
+- rake -T or --tasks
+- desc a custom task
+- `db:` family of tasks
+- migrations change schema - NOT DATA
+- migrations as a history of schema changes
+- Rescuebot.rb
+- `class RescueBot < ActiveRecord::Base` end
+- rake db:create_migration NAME=create_rescue_bots_table
+- what’s the id number?
+- inspect the migration code
+- define the `change` method with a `t` table variable
+- `create_table :rescue_bots do |t|` `t.string :name`
+- run the migration `rake db:migrate`
+- development.sqlite <-- our db file
+- repeat the 3 step cadence: create model, create and run migration, check the schema
+- run pry console - you should be able to access the models you’ve created
+- `new`, `save` cadence
+- `create`,  `delete`, `find`, `find_by` <-- where do these come from?
+- !!! all the stuff we get from AR :heart:
+- add columns to rescue bots `rake db:create_migration NAME=explicit_name`
+- def change `add_column :rescue_bots, :type_of_rescue  :string`
+- rake db:rollback STEP=n def 1 <-- rollback one or n migrations
+- migration overwrite over rollbacks
+- review the process
+- `def name_in_caps` in model <--- how to write custom methods
+- what methods do we actually have to build?
+- functions that change the db vs the ones that do not (`add_plus_to_name`) etc
