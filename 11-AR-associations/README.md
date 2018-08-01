@@ -1,0 +1,29 @@
+- kinds of relationships 
+- what is a model
+- 4 steps (model, migration, run, schema)
+- [AR docs](https://github.com/rails/rails/tree/master/activerecord)
+- create Eater model
+- CreateEatersTable migration.
+- Migrate
+- Schema
+- Create eaters, read, update and delete.
+- Pizza Model/Migration/Run/Schema
+- Which model has a foreign key here? How do we signify it?
+- `create_table :pizzas do |t| \n t.string :name \n t.integer :price \n t.integer :eater_id \n
+- ID!? eater_id? what does AR do about it? Eater has_many :pizzas Pizza belongs_to :eater
+- has_many <-> belongs_to 
+- using _ in pry
+- eater.pizzas << bbq // AR automatic assignment
+- eater.reload
+- pizza and toppings relationship - what is it?
+- topping.rb and pizza_topping.rb classess, and migration. pizza_toppings is a join!
+- Pizza has many pizza toppings
+- pizza topping belongs to pizza
+- topping has many pizza toppings
+- pizaa topping belongs to topping
+- pizza has many toppings, through pizza toppings
+- topping has many pizzas, through pizza toppings
+- create toppings
+- associate toppings w/ a pizza through pizza.toppings 
+- where did that .toppings variable come from?
+- pizza.topping_ids = [1, 3, 5] pep.save
