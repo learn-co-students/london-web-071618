@@ -1,0 +1,7 @@
+<h1>All restaurants here</h1>
+<a href="/restaurants/new">Make a new restaurant</a>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><a href="restaurants/<%= restaurant.id %>"><%= restaurant.name %></a> in <%= restaurant.neighborhood %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,23 @@
+<h1>Edit Restaurant</h1>
+
+<a href="/restaurants/<%= @restaurant.id %>">cancel</a>
+
+<form action="/restaurants/<%= @restaurant.id %>" method="post" >
+  <input type="hidden" name="_method" value="patch" />
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" name="restaurant[name]" value="<%= @restaurant.name %>">
+  </div>
+  <div >
+    <label for="neighborhood">Neighborhood:</label>
+    <input type="text" name="restaurant[neighborhood]" value="<%= @restaurant.neighborhood %>">
+  </div>
+  <div >
+    <input type="submit" value="Edit Restaurant" />
+  </div>
+</form>
+
+<form action="/restaurants/<%= @restaurant.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete Restaurant" />
+</form>
