@@ -1,0 +1,17 @@
+<h1>Edit Flavour</h1>
+
+<a href="/flavours/<%= @flavour.id %>">Go back</a>
+
+<form action="/flavours/<%= @flavour.id %>" method="post">
+  <input type="hidden" name="_method" value="patch" />
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="flavour_name" name="flavour[name]" value="<%= @flavour.name %>" />
+  </div>
+  <input type="submit" value="Edit Flavour!" />
+</form>
+
+<form action="/flavours/<%= @flavour.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete Flavour :(" />
+</form>

@@ -1,0 +1,13 @@
+<h1><%= @user.name %></h1>
+
+<% if @user.sundaes.length > 0 %>
+  <p>This user has made the following sundaes:</p>
+  <ul>
+    <% @user.sundaes.each do |sundae| %>
+      <li><a href="/sundaes/<%= sundae.id %>"><%= sundae.name %></a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<a href="/users">All Users</a>
+<a href="/users/<%= @user.id %>/edit">Edit this user</a>

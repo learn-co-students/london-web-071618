@@ -1,0 +1,9 @@
+<h1>All flavours</h1>
+
+<a href="/flavours/new">New Flavour</a>
+
+<ul>
+  <% @flavours.each do |flavour| %>
+    <li><a href="/flavours/<%= flavour.id %>"><%= flavour.name %></a></li>
+  <% end %>
+</ul>

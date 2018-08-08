@@ -1,0 +1,15 @@
+<h1><%= @sundae.name %></h1>
+
+<p>This awesome delicious meal was created on behalf of <a href="/users/<%= @sundae.user.id %>"><%= @sundae.user.name %></a></p>
+
+<% if @sundae.flavours.length > 0 %>
+<p>This sundae has these delectable flavours:</p>
+<ul>
+  <% @sundae.flavours.each do |flavour| %>
+    <li><a href="/flavours/<%= flavour.id %>"><%= flavour.name %></a></li>
+  <% end %>
+</ul>
+<% end %>
+
+<a href="/sundaes">All Sundaes</a>
+<a href="/sundaes/<%= @sundae.id %>/edit">Edit this sundae</a>

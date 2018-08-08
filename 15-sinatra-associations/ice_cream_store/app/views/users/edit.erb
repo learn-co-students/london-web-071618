@@ -1,0 +1,17 @@
+<h1>Edit User</h1>
+
+<a href="/users/<%= @user.id %>">Go back</a>
+
+<form action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="patch" />
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="user_name" name="user[name]" value="<%= @user.name %>" />
+  </div>
+  <input type="submit" value="Edit User!" />
+</form>
+
+<form action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete User :(" />
+</form>

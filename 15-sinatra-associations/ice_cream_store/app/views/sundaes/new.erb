@@ -1,0 +1,27 @@
+<h1>New Sundae</h1>
+
+<a href="/sundaes">Go back</a>
+
+<form action="/sundaes" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="sundae_name" name="sundae[name]" />
+  </div>
+
+  <select name="sundae[user_id]">
+    <% @users.each do |user| %>
+      <option value="<%= user.id %>"><%= user.name %></option>
+    <% end %>
+  </select>
+
+  <% @flavours.each do |flavour| %>
+    <div>
+       <input type="checkbox" id="flavour-<%= flavour.id %>" name="sundae[flavour_ids][]"
+              value="<%= flavour.id %>" />
+       <label for="flavour-<%= flavour.id %>"><%= flavour.name %></label>
+    </div>
+  <% end %>
+
+
+  <input type="submit" value="Create Sundae!" />
+</form>

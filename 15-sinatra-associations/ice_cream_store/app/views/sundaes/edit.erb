@@ -1,0 +1,46 @@
+<h1>Edit Sundae</h1>
+
+<a href="/sundaes/<%= @sundae.id %>">Go back</a>
+
+<form action="/sundaes/<%= @sundae.id %>" method="post">
+  <input type="hidden" name="_method" value="patch" />
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="sundae_name" name="sundae[name]" value="<%= @sundae.name %>" />
+  </div>
+
+
+  <select name="sundae[user_id]">
+    <% @users.each do |user| %>
+      <option value="<%= user.id %>"
+        <% if user.id == @sundae.user.id %>
+          selected
+        <% end %>
+      ><%= user.name %></option>
+    <% end %>
+  </select>
+
+  <% @flavours.each do |flavour| %>
+    <div>
+       <input type="checkbox" id="flavour-<%= flavour.id %>" name="sundae[flavour_ids][]"
+              value="<%= flavour.id %>"
+              <% if @sundae.flavour_ids.include?(flavour.id) %>
+                checked
+              <% end %>
+      />
+       <label for="flavour-<%= flavour.id %>"><%= flavour.name %></label>
+    </div>
+  <% end %>
+
+  <input type="submit" value="Edit Sundae!" />
+
+
+</form>
+
+
+
+
+<form action="/sundaes/<%= @sundae.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete Sundae :(" />
+</form>

@@ -1,0 +1,9 @@
+<h1>All sundaes</h1>
+
+<a href="/sundaes/new">New Sundae</a>
+
+<ul>
+  <% @sundaes.each do |sundae| %>
+    <li><a href="/sundaes/<%= sundae.id %>"><%= sundae.name %></a></li>
+  <% end %>
+</ul>
