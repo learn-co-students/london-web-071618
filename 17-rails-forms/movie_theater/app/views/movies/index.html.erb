@@ -1,0 +1,7 @@
+<h1>Which movie do you wanna see????</h1>
+<%= link_to "new movie!", new_movie_path %>
+<ul>
+  <% @movies.each do |movie| %>
+    <li><%= link_to movie.name, movie %> | £<%= movie.price %></li>
+  <% end %>
+</ul>
