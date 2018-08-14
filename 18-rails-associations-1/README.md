@@ -28,7 +28,7 @@ class Farmer < ApplicationRecord
 end
 ```
 
-- Let's generate a Cow and tell it that it `belongs_to` a farmer: `rails g resource Farmer name spots:integer farmer:references`
+- Let's generate a Cow and tell it that it `belongs_to` a farmer: `rails g resource Cow name spots:integer farmer:references`
 
   - the `farmer:references` generator does a few things for us:
 
@@ -202,13 +202,13 @@ end
 
 # For every resource we have, we need to:
 
-- Create routes for all required CRUD operations
+- Create routes for all required CRUD operations: index, show, new, create, edit, update, destroy
 - Define relationships in models and migrations
 - Define all relevant methods on the controller
 - Handle errors
 - migrate and seed data
 
-# anatomy of a controller
+# anatomy of a controller cheatsheet
 
 ```ruby
 class CheesesController < ApplicationController
@@ -269,7 +269,15 @@ class CheesesController < ApplicationController
 end
 ```
 
-# anatomy of the routing file
+# form_tag - for deletion
+
+```ruby
+<%= form_tag cheese_path(@cheese), method: "delete" do  %>
+  <%= submit_tag "Delete Cheese" %>
+<% end %>
+```
+
+# anatomy of the routing file cheatsheet
 
 ```ruby
   resources :regions  # is doing that:
@@ -290,13 +298,17 @@ end
   # delete "/regions/:id", to: 'regions#destroy'
 ```
 
+# db seed cheatsheet
 ```ruby
 Farmer.create(name: 'Dan')
 Farmer.create(name: 'Rishi')
 
+# or as an array of hashes:
+
 Cow.create([{name: 'Moony', farmer_id: 1}, {name: 'Moortha', farmer_id: 1}, {name: 'Remoo', farmer_id: 1}, {name: 'Pormoopine', farmer_id: 2}])
 ```
 
+# errors cheatsheet
 ```ruby
 <% if flash[:errors] %>
   <ul>
