@@ -1,3 +1,8 @@
+## Before we start... some organisational stuff
+- lectures this week
+- pairing project
+- pre-code challenge review
+
 # Associations in Rails
 
 ## Building a has_many and belongs_to
@@ -200,15 +205,17 @@ end
 
 ![](https://media.giphy.com/media/A5pcWMMIEO95S/giphy.gif)
 
-# For every resource we have, we need to:
+# Code challenge tips and cheatsheets.
 
-- Create routes for all required CRUD operations: index, show, new, create, edit, update, destroy
-- Define relationships in models and migrations
-- Define all relevant methods on the controller
-- Handle errors
-- migrate and seed data
+## For every resource we have, we need to:
 
-# anatomy of a controller cheatsheet
+- Create routes for all required CRUD operations.
+- Define relationships in models and migrations.
+- Define all relevant methods on the controller. Choose from index, show, new, create, edit, update, destroy. DON'T BUILD ALL OF THEM FOR THE SAKE OF IT - it will drastically reduce the amount of time you'll have left during the code challenge should you decide to build all
+- Handle errors & user feedback
+- After migrating models, build a seed data file (should it not exist) as opposed to creating your instances manually in the console. #workSmart
+
+## anatomy of a controller cheatsheet
 
 ```ruby
 class CheesesController < ApplicationController
@@ -269,7 +276,7 @@ class CheesesController < ApplicationController
 end
 ```
 
-# form_tag - for deletion
+## form_tag - for deletion
 
 ```ruby
 <%= form_tag cheese_path(@cheese), method: "delete" do  %>
@@ -277,7 +284,7 @@ end
 <% end %>
 ```
 
-# anatomy of the routing file cheatsheet
+## anatomy of the routing file cheatsheet
 
 ```ruby
   resources :regions  # is doing that:
@@ -298,7 +305,7 @@ end
   # delete "/regions/:id", to: 'regions#destroy'
 ```
 
-# db seed cheatsheet
+## db seed cheatsheet
 ```ruby
 Farmer.create(name: 'Dan')
 Farmer.create(name: 'Rishi')
@@ -308,7 +315,7 @@ Farmer.create(name: 'Rishi')
 Cow.create([{name: 'Moony', farmer_id: 1}, {name: 'Moortha', farmer_id: 1}, {name: 'Remoo', farmer_id: 1}, {name: 'Pormoopine', farmer_id: 2}])
 ```
 
-# errors cheatsheet
+## errors cheatsheet
 ```ruby
 <% if flash[:errors] %>
   <ul>
