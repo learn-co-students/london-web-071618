@@ -1,0 +1,41 @@
+.para {
+  color: pink;
+}
+
+p {
+  color: red;
+}
+
+#first_paragraph {
+  color: blue;
+}
+
+a:link {
+  color: pink;
+}
+
+a:visited {
+  background-color: blue;
+}
+
+a:hover {
+  background-color: pink;
+}
+
+a:active {
+  background-color: black;
+  color: salmon;
+}
+
+.header_section{
+  text-align: center;
+}
+
+.sidebar{
+  border: 1px solid black;
+}
+
+.main_section {
+  display: grid;
+  grid-template-columns: 75% 25%
+}
