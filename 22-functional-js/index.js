@@ -128,3 +128,35 @@ const countdown = n => {
       countdown(n - 1)
       }
 }
+
+// MEMOIZATION
+// Speed up function execution
+// by remembering results
+const memoize = func => (...args) => {
+	func.memoize = func.memoize || {}
+	
+	if (func.memoize[args]) {
+		console.log('Returning memoized result!')
+		return func.memoize[args]
+	}
+	
+	const result = func(...args)
+	func.memoize[args] = result
+	console.log('Result is now memoized!')
+
+	return result
+}
+
+const sum = (a, b) => a + b
+const memoizedSum = memoize(sum)
+
+memoizedSum(1,1)
+// Result is now memoized!
+// 2
+
+memoizedSum(1,1)
+// Returning memoized result!
+// 2
+
+sum.memoize
+// {1,1: 2}
