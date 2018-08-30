@@ -1,5 +1,7 @@
 # Functional JS
 
+[Functional definition and vocabulary!](https://docs.google.com/presentation/d/1me3KH3Nkxr0-TP3VHKuGBk1mZx6YDgHTKZXON6Ry9zc/edit#slide=id.p)
+
 ### Functions are First Class Objects
   * They are objects
   * Can do anything you can do with other objects
