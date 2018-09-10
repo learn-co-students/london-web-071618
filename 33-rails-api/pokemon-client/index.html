@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pokemon </title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img src="images/pokemon-logo.gif" alt="pokemon logo"/>
+  <h2>Gotta fetch 'em all!</h2>
+  <form id="pokeForm">
+    <input id="pokeNameInput" type="text" placeholder="Poke name"/>
+    <input id="pokeImageInput" type="text" placeholder="Poke image"/>
+    <select id="pokeTrainerInput">
+        <option value="" disabled selected>Choose your poke trainer!</option>
+        <option value="nicolas@email.com">Nicolas</option>
+    </select>
+    <button type="submit">GO!</button>
+  </form>
+  <ul id="pokeList"></ul>
+  <!-- <script src="data.js"></script> -->
+  <script src="index.js"></script>
+</body>
+</html>
