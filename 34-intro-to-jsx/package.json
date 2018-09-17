@@ -1,0 +1,26 @@
+{
+  "name": "34-js-to-jsx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "navbar-example.js",
+  "scripts": {
+    "start": "echo 'hello there!'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learn-co-curriculum/react-lecture-1-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/learn-co-curriculum/react-lecture-1-starter/issues"
+  },
+  "homepage": "https://github.com/learn-co-curriculum/react-lecture-1-starter#readme",
+  "dependencies": {
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "semantic-ui-css": "^2.4.0"
+  }
+}
