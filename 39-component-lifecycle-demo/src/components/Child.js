@@ -1,13 +1,13 @@
 import React from 'react'
 
 class Child extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
-    console.log("Child constructed")
+    console.log('Child constructed')
   }
 
-  render() {
-    console.log("Child rendered")
+  render () {
+    console.log('Child rendered')
     return (
       <React.Fragment>
         <p>Look at the logs to see what's going on.</p>
@@ -18,8 +18,8 @@ class Child extends React.Component {
     )
   }
 
-  componentDidMount() {
-    console.log("Child did mount")
+  componentDidMount () {
+    console.log('Child did mount')
   }
 }
 

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import GrandParent from './components/GrandParent'
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <GrandParent />
-    );
+    )
   }
 }
 
-export default App;
+export default App

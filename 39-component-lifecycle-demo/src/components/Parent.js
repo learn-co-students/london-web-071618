@@ -2,18 +2,18 @@ import React from 'react'
 import Child from './Child'
 
 class Parent extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
-    console.log("Parent constructed")
+    console.log('Parent constructed')
   }
 
-  render() {
-    console.log("Parent rendered")
+  render () {
+    console.log('Parent rendered')
     return (<Child />)
   }
 
-  componentDidMount() {
-    console.log("Parent did mount")
+  componentDidMount () {
+    console.log('Parent did mount')
   }
 }
 

@@ -2,18 +2,18 @@ import React from 'react'
 import Parent from './Parent'
 
 class GrandParent extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
-    console.log("GrandParent constructed")
+    console.log('GrandParent constructed')
   }
 
-  render() {
-    console.log("GrandParent rendered")
+  render () {
+    console.log('GrandParent rendered')
     return (<Parent />)
   }
 
-  componentDidMount() {
-    console.log("GrandParent did mount")
+  componentDidMount () {
+    console.log('GrandParent did mount')
   }
 }
 
