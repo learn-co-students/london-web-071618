@@ -12,7 +12,7 @@ class Child extends React.Component {
       <React.Fragment>
         <p>Look at the logs to see what's going on.</p>
         <p>The component heirarchy is Grandparent -> Parent -> Child, and you can see in which order each of "constructor", "render", and "componentDidMount" are called.</p>
-        <p>Each component renders after it is constructed. However, it is not considered "mounted" until all of it's children are mounted.</p>
+        <p>Each component renders after it is constructed. However, it is not considered "mounted" until all of its children are mounted.</p>
         <p>Feel free to play with the structure to see what's going on!</p>
       </React.Fragment>
     )
