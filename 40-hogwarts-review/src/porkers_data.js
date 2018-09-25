@@ -90,6 +90,6 @@ const hogs = [
     'weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water': 4.1,
     'highest medal achieved': 'wood'
   }
-];
+]
 
-export default hogs;
+export default hogs

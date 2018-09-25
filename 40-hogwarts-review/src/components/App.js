@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React, { Component } from 'react'
+import '../App.css'
 import Nav from './Nav'
-import hogs from '../porkers_data';
+import hogs from '../porkers_data'
 
 import HogList from './HogList'
 import HogDetails from './HogDetails'
 
 const weight = 'weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water'
 class App extends Component {
-
   state = {
     hogs: hogs,
     selectedHog: undefined,
@@ -49,37 +48,36 @@ class App extends Component {
     this.setState({ sortBy: sortType })
   }
 
-  render() {
+  render () {
     const { selectedHog, hogs, showGreasedOnly } = this.state
-    const filteredHogs = showGreasedOnly ?
-      hogs.filter(hog => hog.greased) :
-      hogs
+    const filteredHogs = showGreasedOnly
+      ? hogs.filter(hog => hog.greased)
+      : hogs
     const sortedHogs = this.sortHogs(filteredHogs)
 
-
     return (
-      <div className="App">
-          < Nav />
-          <div className="buttons">
-            <button onClick={this.toggleGreased}>
+      <div className='App'>
+        <Nav />
+        <div className='buttons'>
+          <button onClick={this.toggleGreased}>
               SHOW GREASED ONLY: {showGreasedOnly ? 'ON' : 'OFF'}
-            </button>
-            <select onChange={(event) => this.sortHogsBy(event.target.value)}>
-              <option value=''>Sort by...</option>
-              <option value='weight'>Weight</option>
-              <option value='name'>Name</option>
-            </select>
-          </div>
-          <br />
-          <br />
-          {
-            selectedHog ?
-              <HogDetails hog={selectedHog} deselectHog={this.deselectHog} /> :
-              <HogList hogs={sortedHogs} selectHog={this.selectHog} />
-          }
+          </button>
+          <select onChange={(event) => this.sortHogsBy(event.target.value)}>
+            <option value=''>Sort by...</option>
+            <option value='weight'>Weight</option>
+            <option value='name'>Name</option>
+          </select>
+        </div>
+        <br />
+        <br />
+        {
+          selectedHog
+            ? <HogDetails hog={selectedHog} deselectHog={this.deselectHog} />
+            : <HogList hogs={sortedHogs} selectHog={this.selectHog} />
+        }
       </div>
     )
   }
 }
 
-export default App;
+export default App
