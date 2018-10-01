@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { Link, Route, Switch } from 'react-router-dom'
+
 import '../App.css'
 import Nav from './Nav'
 import hogs from '../porkers_data'
-
 import HogList from './HogList'
 import HogDetails from './HogDetails'
 
@@ -70,6 +71,10 @@ class App extends Component {
         </div>
         <br />
         <br />
+        <Switch>
+          <Route path='/hogs/:id' component={props => <HogDetails hog={selectedHog} deselectHog={this.deselectHog} {...props} />} />
+          <Route path='/' component={props => <HogList hogs={sortedHogs} selectHog={this.selectHog} {...props} />} />
+        </Switch>
         {
           selectedHog
             ? <HogDetails hog={selectedHog} deselectHog={this.deselectHog} />
