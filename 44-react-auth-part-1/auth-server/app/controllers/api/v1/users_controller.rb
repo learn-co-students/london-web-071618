@@ -7,17 +7,16 @@ class Api::V1::UsersController < ApplicationController
   def signin
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
-      render json: {id: user.id, username: user.username}
+      render json: {username: user.username, token: issue_token({id: user.id})}
     else
       render json: {error: 'No valid user found.'}, status: 400
     end
   end
 
   def validate
-    token = request.headers['Authorization'].to_i
-    user = User.find(token)
+    user = current_user
     if user
-      render json: {id: user.id, username: user.username}
+      render json: {username: user.username, token: token}
     else
       render json: {error: 'Validation failed.'}, status: 400
     end

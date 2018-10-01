@@ -20,7 +20,7 @@ class SignInForm extends React.Component {
           console.log(data)
         } else {
           signin(data.username)
-          localStorage.setItem('token', data.id)
+          localStorage.setItem('token', data.token)
         }
       })
   }
