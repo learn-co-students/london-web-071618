@@ -13,8 +13,10 @@ class ApplicationController < ActionController::API
 
   def decoded_token
     begin
-      JWT.decode(token, secret)
-    r
+      return JWT.decode(token, secret)
+    rescue JWT::DecodeError
+      return [{}]
+    end
   end
 
   def token

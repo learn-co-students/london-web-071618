@@ -1,14 +1,11 @@
 import React from 'react'
 
-import User from './User'
+import API from '../adapters/API'
+import Item from './Item'
 
-class UserList extends React.Component {
+class ItemList extends React.Component {
   state = {
-    users: [
-      {username: 'User'},
-      {username: 'Another User'},
-      {username: 'One More User'}
-    ]
+    items: []
   }
 
   style = {
@@ -18,8 +15,15 @@ class UserList extends React.Component {
     flexWrap: 'wrap'
   }
 
+  componentDidMount() {
+    API.getItems()
+      .then(items => {
+        this.setState({ items })
+      })
+  }
+
   render () {
-    const { users } = this.state
+    const { items } = this.state
     const { currentUser, history } = this.props
 
     if (!currentUser) {
@@ -29,8 +33,8 @@ class UserList extends React.Component {
     return (
       <div style={this.style} className='user-list'>
         {
-          users.map(user =>
-            <User key={user.username} user={user} />
+          items.map(item =>
+            <Item key={item.id} item={item} />
           )
         }
       </div>
@@ -38,4 +42,4 @@ class UserList extends React.Component {
   }
 }
 
-export default UserList
+export default ItemList

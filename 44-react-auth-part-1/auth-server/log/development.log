@@ -38,3 +38,429 @@ app/controllers/application_controller.rb:15:in `decoded_token'
 app/controllers/application_controller.rb:11:in `token_user_id'
 app/controllers/application_controller.rb:3:in `current_user'
 app/controllers/api/v1/items_controller.rb:3:in `index'
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:43:52 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nmarcora/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ItemsController#index as HTML
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:3:in `current_user'
+app/controllers/api/v1/items_controller.rb:3:in `index'
+Started POST "/api/v1/signin" for ::1 at 2018-10-01 16:44:28 +0100
+Processing by Api::V1::UsersController#signin as */*
+  Parameters: {"username"=>"Nicolas", "password"=>"[FILTERED]", "user"=>{"username"=>"Nicolas"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Nicolas"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8
+Completed 200 OK in 61ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:44:30 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 18ms (Views: 4.7ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.9ms)[0m  [1m[32mINSERT INTO "items" ("name", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Potion"], ["description", "Drink me to gain health."], ["user_id", 1], ["created_at", "2018-10-01 15:45:59.876804"], ["updated_at", "2018-10-01 15:45:59.876804"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:46:16 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/signin" for ::1 at 2018-10-01 16:46:31 +0100
+Processing by Api::V1::UsersController#signin as */*
+  Parameters: {"username"=>"Nicolas", "password"=>"[FILTERED]", "user"=>{"username"=>"Nicolas"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Nicolas"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8
+Completed 200 OK in 59ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:47:12 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:49:42 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/signin" for ::1 at 2018-10-01 16:49:49 +0100
+Processing by Api::V1::UsersController#signin as */*
+  Parameters: {"username"=>"Nicolas", "password"=>"[FILTERED]", "user"=>{"username"=>"Nicolas"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Nicolas"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8
+Completed 200 OK in 61ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:50:21 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:51:31 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:52:20 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:53:34 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:53:34 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:53:34 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sword"], ["description", "Use me to fight monsters."], ["user_id", 1], ["created_at", "2018-10-01 15:54:30.952175"], ["updated_at", "2018-10-01 15:54:30.952175"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:54:34 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:54:34 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:54:34 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:54:40 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:3:in `current_user'
+app/controllers/api/v1/items_controller.rb:3:in `index'
+Started POST "/api/v1/signin" for ::1 at 2018-10-01 16:54:44 +0100
+Processing by Api::V1::UsersController#signin as */*
+  Parameters: {"username"=>"Marju", "password"=>"[FILTERED]", "user"=>{"username"=>"Marju"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Marju"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8
+Completed 200 OK in 56ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:54:44 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:3:in `current_user'
+app/controllers/api/v1/items_controller.rb:3:in `index'
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:55:01 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:55:01 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:55:01 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:55:08 +0100
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:55:08 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by Api::V1::ItemsController#index as */*
+  ↳ app/controllers/application_controller.rb:3
+  Parameters: {"item"=>{}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:55:08 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:55:14 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:3:in `current_user'
+app/controllers/api/v1/items_controller.rb:3:in `index'
+Started POST "/api/v1/signin" for ::1 at 2018-10-01 16:55:18 +0100
+Processing by Api::V1::UsersController#signin as */*
+  Parameters: {"username"=>"Nicolas", "password"=>"[FILTERED]", "user"=>{"username"=>"Nicolas"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Nicolas"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8
+Completed 200 OK in 61ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:55:18 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Healing Spell"], ["description", "Use me to replenish someone's health"], ["user_id", 3], ["created_at", "2018-10-01 15:56:10.237153"], ["updated_at", "2018-10-01 15:56:10.237153"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Staff"], ["description", "You shall not pass!"], ["user_id", 3], ["created_at", "2018-10-01 15:56:32.623501"], ["updated_at", "2018-10-01 15:56:32.623501"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:56:36 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 16:56:36 +0100
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:56:37 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:56:40 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:3:in `current_user'
+app/controllers/api/v1/items_controller.rb:3:in `index'
+Started POST "/api/v1/signin" for ::1 at 2018-10-01 16:56:45 +0100
+Processing by Api::V1::UsersController#signin as */*
+  Parameters: {"username"=>"Marju", "password"=>"[FILTERED]", "user"=>{"username"=>"Marju"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Marju"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8
+Completed 200 OK in 59ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 16:56:45 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 17:04:44 +0100
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 17:04:44 +0100
+Processing by Api::V1::ItemsController#index as */*
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"item"=>{}}
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 17:04:44 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/validate" for ::1 at 2018-10-01 17:05:03 +0100
+Started GET "/api/v1/items" for ::1 at 2018-10-01 17:05:03 +0100
+Processing by Api::V1::ItemsController#index as */*
+Processing by Api::V1::UsersController#validate as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  Parameters: {"item"=>{}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 17:05:03 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 17:05:19 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:3:in `current_user'
+app/controllers/api/v1/items_controller.rb:3:in `index'
+Started POST "/api/v1/signin" for ::1 at 2018-10-01 17:05:24 +0100
+Processing by Api::V1::UsersController#signin as */*
+  Parameters: {"username"=>"Nicolas", "password"=>"[FILTERED]", "user"=>{"username"=>"Nicolas"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Nicolas"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8
+Completed 200 OK in 54ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/items" for ::1 at 2018-10-01 17:05:24 +0100
+Processing by Api::V1::ItemsController#index as */*
+  Parameters: {"item"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+

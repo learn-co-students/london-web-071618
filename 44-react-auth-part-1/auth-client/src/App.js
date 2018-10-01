@@ -7,7 +7,7 @@ import API from './adapters/API'
 
 import Header from './components/Header'
 import SignInForm from './components/SignInForm'
-import UserList from './components/UserList'
+import ItemList from './components/ItemList'
 
 class App extends Component {
   state = {
@@ -43,7 +43,7 @@ class App extends Component {
       <div className='App'>
         <Header currentUser={currentUser} signout={signout} />
         <Route path='/signin' component={props => <SignInForm signin={signin} {...props} />} />
-        <Route path='/users' component={props => <UserList currentUser={currentUser} {...props} />} />
+        <Route path='/users' component={props => <ItemList currentUser={currentUser} {...props} />} />
       </div>
     )
   }

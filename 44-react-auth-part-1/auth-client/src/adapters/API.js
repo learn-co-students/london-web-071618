@@ -18,10 +18,21 @@ class API {
       }
     }).then(resp => resp.json())
   }
+
+  static getItems() {
+    const token = localStorage.getItem('token')
+    return fetch(API.itemsURL, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token
+      }
+    }).then(resp => resp.json())
+  }
 }
 
 API.baseURL = 'http://localhost:3001/api/v1'
 API.signinURL = API.baseURL + '/signin'
 API.validateURL = API.baseURL + '/validate'
+API.itemsURL = API.baseURL + '/items'
 
 export default API

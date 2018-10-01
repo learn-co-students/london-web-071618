@@ -41,7 +41,7 @@ const styles = theme => ({
   }
 })
 
-class User extends React.Component {
+class Item extends React.Component {
   state = { expanded: false }
 
   handleExpandClick = () => {
@@ -49,14 +49,14 @@ class User extends React.Component {
   };
 
   render () {
-    const { classes, user } = this.props
+    const { classes, item } = this.props
 
     return (
       <Card style={{margin: '10px'}} className={classes.card}>
         <CardHeader
           avatar={
             <Avatar aria-label='Recipe' className={classes.avatar}>
-              {user.username[0].toUpperCase()}
+              {item.name[0].toUpperCase()}
             </Avatar>
           }
           action={
@@ -64,7 +64,7 @@ class User extends React.Component {
               <MoreVertIcon />
             </IconButton>
           }
-          title={user.username}
+          title={item.name}
           subheader='September 14, 2016'
         />
         <CardActions className={classes.actions} disableActionSpacing>
@@ -88,7 +88,7 @@ class User extends React.Component {
         <Collapse in={this.state.expanded} timeout='auto' unmountOnExit>
           <CardContent>
             <Typography paragraph variant='body2'>
-              More info here...
+              {item.description}
             </Typography>
           </CardContent>
         </Collapse>
@@ -97,8 +97,8 @@ class User extends React.Component {
   }
 }
 
-User.propTypes = {
+Item.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(User)
+export default withStyles(styles)(Item)
