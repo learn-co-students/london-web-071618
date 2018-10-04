@@ -1,7 +1,7 @@
 # React Redux
 
 ### Resources
-- [Teacher Upvoter](https://stackblitz.com/edit/mod4-teacher-upvoter-redux)
+- [Teacher Upvoter](https://stackblitz.com/edit/mod4-teacher-upvoter-redux-starter-code)
 
 ### React App Walk Through
 
